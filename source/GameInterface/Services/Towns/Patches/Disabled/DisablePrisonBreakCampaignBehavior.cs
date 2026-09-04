@@ -1,5 +1,4 @@
-﻿using Common;
-using HarmonyLib;
+﻿using HarmonyLib;
 using SandBox.CampaignBehaviors;
 
 namespace GameInterface.Services.Towns.Patches.Disabled;
@@ -8,5 +7,5 @@ namespace GameInterface.Services.Towns.Patches.Disabled;
 internal class DisablePrisonBreakCampaignBehavior
 {
     [HarmonyPatch(nameof(PrisonBreakCampaignBehavior.RegisterEvents))]
-    internal static bool Prefix() => ModInformation.IsClient;
+    static bool Prefix() => false;
 }
